@@ -14,10 +14,16 @@ var timeblocksArray = [
                         $2PM, $3PM, $4PM, $5PM 
                     ]
 
+var todoList =[ 
+                "", "", "", "", "", 
+                "", "", "", "",
+                ];
 
 
 
 $(document).ready(function () {
+
+
     console.log("ready!");
 
 setInterval(function() { 
@@ -40,6 +46,18 @@ setInterval(function() {
        }
 
     }
+
+    function storingTodos() {
+
+        for(var i = 0; i < timeblocksArray.length; i++)
+        {
+            todoList[i] = timeblocksArray[i].text();
+            
+        }
+
+    }
+
+    storingTodos();
 
     setCurrentState();
 
